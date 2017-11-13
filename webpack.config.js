@@ -2,7 +2,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
-const extractSass = new ExtractTextPlugin('public/css/styles.css');
+const extractSass = new ExtractTextPlugin('css/styles.css');
 const definePlugin = new webpack.DefinePlugin({
   // change to 'production' for production apps
   'process.env.NODE_ENV': JSON.stringify('development')
