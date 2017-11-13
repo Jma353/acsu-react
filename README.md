@@ -14,3 +14,6 @@ npm start
 ## Developing
 For the most pleasant developing experience, I recommend [Atom](https://atom.io/)
 with [Nuclide](https://nuclide.io/) installed.
+
+## Credits
+Data provided for free by [IEX](https://iextrading.com/developer/).  See [terms](https://iextrading.com/api-exhibit-a) here.
