@@ -7,3 +7,26 @@ html, body {
   font-family: $quicksand;
   margin: 0;
 }
+
+.investrapp-root {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 100px 0px 100px;
+}
+
+.investrapp-title {
+  text-align: center;
+  font-size: 32px;
+}
+
+.searchbar-root {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchbar-input {
+  margin-top: 12px;
+  width: 300px;
+}

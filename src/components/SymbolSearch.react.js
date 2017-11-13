@@ -2,12 +2,12 @@
 import type { Symbol } from './types';
 
 import React from 'react';
+import SearchBar from './SearchBar.react.js';
 import axios from 'axios';
 
 type Props = {};
 
 type State = {
-  query: string,
   symbols: Array<Symbol>
 };
 
@@ -15,12 +15,9 @@ class SymbolSearch extends React.Component<void, Props, State> {
   props: Props;
   state: State;
 
-  constructor (): void {
-    super();
-    this.state = {
-      query: '',
-      symbols: []
-    };
+  constructor (props: Props): void {
+    super(props);
+    this.state = {symbols: []};
   }
 
   componentDidMount (): void {
@@ -34,9 +31,20 @@ class SymbolSearch extends React.Component<void, Props, State> {
     });
   }
 
+  _searchStocks = (query: string): Array<string> => {
+    const downcasedQuery = query.toLowerCase();
+    return this.state.symbols.filter((symbol: Symbol) => {
+      const isHit =
+        symbol.symbol.toLowerCase().indexOf(downcasedQuery) !== -1 ||
+        symbol.name.toLowerCase().indexOf(downcasedQuery) !== -1;
+      return isHit;
+    }).map((symbol: Symbol) => {
+      return `${symbol.symbol} | ${symbol.name}`;
+    }).slice(0, 10); // max 10 results
+  }
+
   render (): React.Element<any> {
-    const firstStocks = this.state.symbols.map(s => s.symbol).slice(0, 5);
-    return <ul>{firstStocks.map(sName => <li key={sName}>{sName}</li>)}</ul>;
+    return <SearchBar getSearchResults={this._searchStocks} />;
   }
 }
 
