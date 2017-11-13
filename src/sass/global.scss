@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+$quicksand: 'Quicksand', sans-serif;
 $off-white: #F5F5F5;
 
 html, body {
   background-color: $off-white;
+  font-family: $quicksand;
   margin: 0;
 }
