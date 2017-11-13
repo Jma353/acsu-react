@@ -2,6 +2,9 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 
+// Project-wide SASS
+require('./sass/global.scss');
+
 const root: React.Element<any> = (
   <div>Hello, World!</div>
 );
