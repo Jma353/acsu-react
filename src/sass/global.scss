@@ -1,9 +1,46 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
 $quicksand: 'Quicksand', sans-serif;
 $off-white: #F5F5F5;
+$gray: gray;
 
 html, body {
   background-color: $off-white;
   font-family: $quicksand;
   margin: 0;
+}
+
+.investrapp-root {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 100px 0px 100px;
+}
+
+.investrapp-title {
+  text-align: center;
+  font-size: 32px;
+}
+
+.searchbar-root {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchbar-input {
+  margin-top: 12px;
+  width: 300px;
+}
+
+.searchbar-resultlist {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.searchresult-root {
+  border: solid 1px $gray;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  width: 400px;
 }
