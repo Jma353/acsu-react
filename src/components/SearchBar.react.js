@@ -3,7 +3,7 @@ import React from 'react';
 import SearchResult from './SearchResult.react';
 
 type Props = {
-  getSearchResults: string => Array<string>
+  getSearchResults: string => Promise<Array<string>>
 };
 
 type State = {
@@ -22,10 +22,14 @@ class SearchBar extends React.Component<void, Props, State> {
 
   handleChange = (event: React.Event): void => {
     const text: string = event.target.value;
-    this.setState({
-      query: text,
-      results: text ? this.props.getSearchResults(text) : []
-    });
+    this.setState({query: text});
+    if (!text) {
+      this.setState({results: []});
+    } else {
+      this.props.getSearchResults(text).then((results: Array<string>) => {
+        this.setState({results: results});
+      });
+    }
   }
 
   render (): React.Element<any> {

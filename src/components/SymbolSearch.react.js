@@ -31,16 +31,16 @@ class SymbolSearch extends React.Component<void, Props, State> {
     });
   }
 
-  _searchStocks = (query: string): Array<string> => {
+  _searchStocks = (query: string): Promise<Array<string>> => {
     const downcasedQuery = query.toLowerCase();
-    return this.state.symbols.filter((symbol: Symbol) => {
+    return Promise.resolve(this.state.symbols.filter((symbol: Symbol) => {
       const isHit =
         symbol.symbol.toLowerCase().indexOf(downcasedQuery) !== -1 ||
         symbol.name.toLowerCase().indexOf(downcasedQuery) !== -1;
       return isHit;
     }).map((symbol: Symbol) => {
       return `${symbol.symbol} | ${symbol.name}`;
-    }).slice(0, 5); // max 5 results
+    }).slice(0, 5)); // max 5 results
   }
 
   render (): React.Element<any> {
