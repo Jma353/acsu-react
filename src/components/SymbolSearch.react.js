@@ -40,7 +40,7 @@ class SymbolSearch extends React.Component<void, Props, State> {
       return isHit;
     }).map((symbol: Symbol) => {
       return `${symbol.symbol} | ${symbol.name}`;
-    }).slice(0, 10); // max 10 results
+    }).slice(0, 5); // max 5 results
   }
 
   render (): React.Element<any> {

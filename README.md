@@ -2,8 +2,6 @@
 
 Mini-search application **Investr** highlighting publicly-traded companies.
 
-![Investr GIF](https://media.giphy.com/media/26FfeQDlJe0t5CT2E/giphy.gif)
-
 ## Requirements
 * `Node.js` found [here](https://nodejs.org/en/download/)
 * `NPM 4.*.*` (because I'm old-school like that), which can be grabbed by running `npm install -g npm@4`

@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import SearchResult from './SearchResult.react';
 
 type Props = {
   getSearchResults: string => Array<string>
@@ -37,8 +38,10 @@ class SearchBar extends React.Component<void, Props, State> {
           value={this.props.query}
           onInput={this.handleChange}
         />
-        <ul>
-          {this.state.results.map((r: string) => <li key={r}>{r}</li>)}
+        <ul className='searchbar-resultlist'>
+          {this.state.results.map((r: string) => {
+            return <SearchResult key={r} displayText={r} />;
+          })}
         </ul>
       </div>
     );
