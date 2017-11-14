@@ -20,7 +20,7 @@ class SearchBar extends React.Component<void, Props, State> {
     this.state = {query: '', results: []};
   }
 
-  handleChange = (event: React.Event): void => {
+  handleChange = (event: Object): void => {
     const text: string = event.target.value;
     this.setState({query: text});
     if (!text) {
@@ -39,7 +39,7 @@ class SearchBar extends React.Component<void, Props, State> {
           className='searchbar-input'
           placeholder='Search Symbols and Publicly Traded Companies'
           type='text'
-          value={this.props.query}
+          value={this.state.query}
           onInput={this.handleChange}
         />
         <ul className='searchbar-resultlist'>

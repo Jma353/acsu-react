@@ -7,3 +7,4 @@
 
 [options]
 module.file_ext=.scss
+module.file_ext=.js
